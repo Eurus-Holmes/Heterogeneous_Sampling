@@ -151,12 +151,13 @@ def main(args):
     # print(hg.edata[dgl.EID])
     # a = 433252/ 0
 
-    num_parts = 6
+    num_parts = args.num_parts
+    cache_path_str = str(num_parts) + '_' + args.dataset + '_' + str(args.cluster_size) + '.pkl'
     cluster_gcn_sampler = dgl.dataloading.ClusterGCNSampler(
-          hg, num_parts, cache_path='ecm_c_gcn6.pkl')
+          hg, num_parts, cache_path=cache_path_str)
     cluster_gcn_loader = dgl.dataloading.DataLoader(
           hg, th.arange(num_parts), cluster_gcn_sampler,
-          batch_size=3, shuffle=True, drop_last=False, num_workers=4)
+          batch_size=args.cluster_size, shuffle=True, drop_last=False, num_workers=4)
     #print(hg)
     count = 0
     #print(g)
@@ -234,14 +235,14 @@ def main(args):
             sampler = dgl.dataloading.MultiLayerNeighborSampler([args.fanout] * args.n_layers)
             loader = dgl.dataloading.DataLoader(
                 sg, {category: sg_train_idx}, sampler,
-                batch_size=bs, shuffle=True, num_workers=0)
+                batch_size=bs, shuffle=False, num_workers=0)
 
             # validation sampler
             # we do not use full neighbor to save computation resources
             val_sampler = dgl.dataloading.MultiLayerNeighborSampler([args.fanout] * args.n_layers)
             val_loader = dgl.dataloading.DataLoader(
                 g, {category: val_idx}, val_sampler,
-                batch_size=args.batch_size , shuffle=True, num_workers=0)
+                batch_size=args.batch_size , shuffle=False, num_workers=0)
 
             for i, (input_nodes, seeds, blocks) in enumerate(loader):
                 blocks = [blk.to(device) for blk in blocks]
@@ -301,6 +302,10 @@ if __name__ == '__main__':
             help="number of propagation rounds")
     parser.add_argument("-e", "--n-epochs", type=int, default=20,
             help="number of training epochs")
+    parser.add_argument("-x", "--num-parts", type=int, default=6,
+            help="number of parts of partitions for Cluster-GCN")
+    parser.add_argument("-y", "--cluster-size", type=int, default=3,
+            help="number of partitions in each cluster in Cluster-GCN")
     parser.add_argument("-d", "--dataset", type=str, required=True,
             help="dataset to use")
     parser.add_argument("--model_path", type=str, default=None,
