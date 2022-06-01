@@ -6,3 +6,7 @@ python ecm_mutag.py -d mutag --l2norm 5e-4 --n-bases 30 --testing --gpu 0 --batc
 python ecm_bgs.py -d bgs --l2norm 5e-4 --n-bases 40 --testing --gpu 0 --fanout=16
 python ecm_am.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0 --fanout=-1
 ```
+or:
+```
+python ecm.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0 --fanout=-1 --num-parts 27 --cluster-size 3
+```
