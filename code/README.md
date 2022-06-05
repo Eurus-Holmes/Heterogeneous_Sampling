@@ -41,12 +41,15 @@ has fewer entities and relations. As a reference (numbers include reverse edges 
 Take `LayerSampler` as an example:
 
 ```
-python entity_classify_mb.py -d aifb --testing --gpu 0 --fanout=8
-python entity_classify_mb.py -d mutag --l2norm 5e-4 --testing --gpu 0 --fanout=8
-python entity_classify_mb.py -d bgs --l2norm 5e-4 --n-bases 40 --testing --gpu 0
-python entity_classify_mb.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  --fanout=16 --batch-size 50
+python LayerSampler.py -d aifb --testing --gpu 0 --fanout=8
+python LayerSampler.py -d mutag --l2norm 5e-4 --testing --gpu 0 --fanout=8
+python LayerSampler.py -d bgs --l2norm 5e-4 --n-bases 40 --testing --gpu 0
+python LayerSampler.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  --fanout=16 --batch-size 50
 ```
 
+## Demo
+
+Check [Google Colab](https://colab.research.google.com/drive/1yaMufnRZMcV2rV07blhjbCFV8XFgc3S8?usp=sharing) for more results.
 
 
 
