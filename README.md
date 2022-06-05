@@ -19,6 +19,10 @@ pip install requests torch rdflib pandas
 Example code was tested with rdflib 4.2.2 and pandas 0.23.4
 
 
+## Pipeline
+
+
+
 ## Datasets
 
 The preprocessing is slightly different from the author's code. We directly load and preprocess
@@ -37,6 +41,9 @@ has fewer entities and relations. As a reference (numbers include reverse edges 
 | BGS-hetero | 94,806 | 672,884 | 96 | 146 |
 | AM | 1,666,764 | 11,976,642 | 266 | 1000 |
 | AM-hetero | 881,680 | 5,668,682 | 96 | 1000 |
+
+
+To evaluate the scalability of sampling methods on larger-scale heterogeneous graphs, we also include [OGBN-MAG](https://ogb.stanford.edu/docs/nodeprop/#ogbn-mag) dataset, including four types of entities—papers (736,389 nodes), authors (1,134,649 nodes), institutions (8,740 nodes), and fields of study (59,965 nodes).
 
 
 ## Demo
