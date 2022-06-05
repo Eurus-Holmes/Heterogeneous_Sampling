@@ -1,1 +1,1 @@
-# CS249-Project
+# Sampling for Heterogeneous Graph Neural Networks
