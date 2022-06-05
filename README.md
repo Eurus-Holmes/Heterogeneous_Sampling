@@ -5,6 +5,8 @@
 Graph sampling is a popular technique in training large-scale graph neural networks (GNNs), recent sampling-based methods have demonstrated impressive success for homogeneous graphs. However, in practice, the interaction between different entities is often different based on their relationship, i.e., the network in reality is mostly heterogeneous. But only a few of the recent works have paid attention to sampling methods on heterogeneous graphs. In this work, we aim to study sampling for heterogeneous GNNs. We propose two general pipelines for heterogeneous sampling. Based on the proposed pipeline, we evaluate 3 representative sampling methods on heterogeneous graphs, including node-wise sampling, layer-wise sampling, and subgraph-wise sampling. To the best of our knowledge, we are the first to provide a thorough implementation, evaluation, and discussion of each sampling method on heterogeneous graphs. Extensive experiments compared sampling methods from multiple aspects and highlight their characteristics for each category. Evaluation of scalability on larger-scale heterogeneous graphs also shows we achieve the trade-off between efficiency and effectiveness. Last, we also analyze the limitations of our proposed pipeline on heterogeneous sub-graph sampling and provide a detailed comparison with HGSampling.
 
 
+
+
 ## Requirements 
 
 * PyTorch 1.0+
@@ -18,8 +20,6 @@ pip install requests torch rdflib pandas
 
 Example code was tested with rdflib 4.2.2 and pandas 0.23.4
 
-
-## Pipeline
 
 
 
@@ -46,9 +46,13 @@ has fewer entities and relations. As a reference (numbers include reverse edges 
 To evaluate the scalability of sampling methods on larger-scale heterogeneous graphs, we also include [OGBN-MAG](https://ogb.stanford.edu/docs/nodeprop/#ogbn-mag) dataset, including four types of entities—papers (736,389 nodes), authors (1,134,649 nodes), institutions (8,740 nodes), and fields of study (59,965 nodes).
 
 
+
+
 ## Demo
 
 Check [demo](https://github.com/Eurus-Holmes/Heterogeneous_Sampling/tree/main/code/demo) or [Google Colab](https://colab.research.google.com/drive/1yaMufnRZMcV2rV07blhjbCFV8XFgc3S8?usp=sharing) for more results.
+
+
 
 
 ## Usage
@@ -85,6 +89,8 @@ python ShaDowKHopSampler.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  
 For subgraph-wise sampling (ClusterGCNSampler):
 
 See [method2_cluster-gcn](https://github.com/Eurus-Holmes/Heterogeneous_Sampling/tree/main/code/method2_cluster-gcn).
+
+
 
 
 ## Acknowledgements
