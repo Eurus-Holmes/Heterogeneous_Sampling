@@ -11,3 +11,5 @@ or:
 ```
 python ecm.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0 --fanout=-1 --num-parts 27 --cluster-size 3
 ```
+
+For each batch, we use one subgraph for training. In the expected behavior we should see "Epoch ... | Batch 000 | Train Acc: ... | Train Loss: ... | Time: ..." for all batches.
