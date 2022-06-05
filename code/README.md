@@ -40,7 +40,16 @@ has fewer entities and relations. As a reference (numbers include reverse edges 
 
 > Please put sampling code at `dgl/examples/pytorch/rgcn-hetero/`
 
-Take `LayerSampler` as an example:
+For node-wise sampling:
+
+```
+python NodeSampler.py -d aifb --testing --gpu 0 --fanout=8
+python NodeSampler.py -d mutag --l2norm 5e-4 --testing --gpu 0 --fanout=8
+python NodeSampler.py -d bgs --l2norm 5e-4 --n-bases 40 --testing --gpu 0
+python NodeSampler.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  --fanout=16 --batch-size 50
+```
+
+For layer-wise sampling:
 
 ```
 python LayerSampler.py -d aifb --testing --gpu 0 --fanout=8
@@ -48,6 +57,20 @@ python LayerSampler.py -d mutag --l2norm 5e-4 --testing --gpu 0 --fanout=8
 python LayerSampler.py -d bgs --l2norm 5e-4 --n-bases 40 --testing --gpu 0
 python LayerSampler.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  --fanout=16 --batch-size 50
 ```
+
+For subgraph-wise sampling (ShaDowKHopSampler):
+
+```
+python ShaDowKHopSampler.py -d aifb --testing --gpu 0 --fanout=8
+python ShaDowKHopSampler.py -d mutag --l2norm 5e-4 --testing --gpu 0 --fanout=8
+python ShaDowKHopSampler.py -d bgs --l2norm 5e-4 --n-bases 40 --testing --gpu 0
+python ShaDowKHopSampler.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  --fanout=16 --batch-size 50
+```
+
+For subgraph-wise sampling (ClusterGCNSampler):
+
+See [method2_cluster-gcn](https://github.com/Eurus-Holmes/Heterogeneous_Sampling/tree/main/code/method2_cluster-gcn).
+
 
 ## Demo
 
