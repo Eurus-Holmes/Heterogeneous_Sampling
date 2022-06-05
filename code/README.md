@@ -38,6 +38,8 @@ has fewer entities and relations. As a reference (numbers include reverse edges 
 
 ## Usage
 
+> Please put sampling code at `dgl/examples/pytorch/rgcn-hetero/`
+
 Take `LayerSampler` as an example:
 
 ```
