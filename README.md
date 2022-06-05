@@ -1,4 +1,4 @@
-# Sampling for Heterogeneous Graph Neural Networks
+# Sampling for Heterogeneous GNNs
 
 ## Abstract
 
