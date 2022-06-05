@@ -49,7 +49,7 @@ python LayerSampler.py -d am --l2norm 5e-4 --n-bases 40 --testing --gpu 0  --fan
 
 ## Demo
 
-Check [Google Colab](https://colab.research.google.com/drive/1yaMufnRZMcV2rV07blhjbCFV8XFgc3S8?usp=sharing) for more results.
+Check [demo](https://github.com/Eurus-Holmes/Heterogeneous_Sampling/tree/main/code/demo) or [Google Colab](https://colab.research.google.com/drive/1yaMufnRZMcV2rV07blhjbCFV8XFgc3S8?usp=sharing) for more results.
 
 
 
