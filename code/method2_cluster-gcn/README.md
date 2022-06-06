@@ -1,4 +1,4 @@
-Please put the files at dgl/examples/pytorch/rgcn-hetero/
+Please put the .py files at dgl/examples/pytorch/rgcn-hetero/
 
 Usage examples (with pre-set hyper-parameters):
 ```
